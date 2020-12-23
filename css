@@ -1,0 +1,77 @@
+pseudo-class : a태그는 여러상태를 가짐.
+link : 클릭을하지않은 상태
+visited : 클릭을 이미한상태
+hover : 마우스를 올린상태
+active : 클릭을 하고있는 순간.
+
+위치가상클래스 : nth-child(위치)
+nth-last-child(위치)
+first-of-type
+last-of-type
+
+only 가상클래스 : p:only-child{color:skyblue} ->선택자가 오직 한개일때 사용합니다. p태그에 적용한다면 p태그외에 다른태그가있을시 적용x
+<body>
+    <p>everdevel</p>
+    <b>everdevel</b>
+</body> --> X
+
+p:only-of-type{color:skyblue} -> 여러선택자가 와도되지만 선택자태그는 오로지하나만잇어야함
+<body>
+    <p>everdevel</p>
+    <p>everdevel</p>
+    <b>everdevel</b>
+    <em>everdevel</em>
+</body> --> X
+
+속성선택자 클래스 : 선택자[속성]{CSS속성:값}
+[class]{color:hotpink} --> 클래스속성전체에 색상적용
+[id]{color:skyblue} --> id속성 전체에 색상적용
+p[id]{color:skyblue} --> p태그중 id속성이있을시에 색상적용
+a[href="https://www.everdevel.com"]{color:hotpink;text-decoration:none}
+-> 이속성과 정확하게 겹치는것만
+a[href^="https://"]{color:hotpink;text-decoration:none}
+-> 이속성으로 시작하는것만
+
+a[href$=".com"]{color:hotpink;text-decoration:none}
+-> 이속성값으로 끝나는것 
+ 
+ 글씨체 적용하기 : 설렉터{font-family:글씨체1,글씨체2, 글씨체3}
+ -> 글씨체123이있는이유: 우선순위, 해당폰트가존재 하지않을시 다음폰트적용
+ p{font-family:verdana}
+ 
+ 글씨크기적용 : p{font-size:값} pt는 절대값이고, px는 상대값
+ px는 모니터해상도에 따라서 크기가 적절히변하고 모바일로도 크기변경가능.
+ p{font-size : 12px}
+ p{font-style : italic}
+ 
+ 글씨 굵기적용 : p{font-weight:값}
+값에는 bold, normal 그리고  100 ~ 900 까지의 숫자가 들어갑니다.
+자료에는 100~900 까지 단계별로 굵기가 나타난다고 설명되어 있으나 테스트 해본결과 100~500까지는 normal
+600~ 900 까지는 bold 처리.
+
+ 글씨 자간 지정 : p{letter-spacing: 10px}
+ 글씨 줄간격 지정 :  {width:300px;line-height:20px}
+ width --> 줄길이 설정, line-height --> 위아래 줄간격
+ 
+ 글씨에 줄긋기: p{text-decoraton:값}
+값에는 underline : 밑줄긋기
+none : 효과없음
+overline : 텍스트 위에 선 긋기
+line-through : 텍스트 가운데 선 긋기
+
+글씨 단어끼리의 간격설정 : p{word-spacing:10px}
+letter-spacing은 모든 한글자한글자마다 간격설정.
+
+글씨 시작위치 :   {direction:rtl},{direction:ltr}
+rtl -> right to left
+ltr -> left to right
+
+글씨 들여쓰기 : p{text-indent:10px};
+텍스트 그림자적용 : <p style="text-shadow:10px 10px skyblue">Disney</p>
+<p style="text-shadow:10px 10px 흐림의크기 : 20px skyblue">Disney</p>
+
+텍스트 변환 적용 : p{text-transform:uppercase, lowercase capitalize}
+capitalize --> 띄어쓰기 다음에 오는문자를 대문자로변경.
+
+
+
